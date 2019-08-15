@@ -49,11 +49,167 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@border: 1px solid black;
+@red: red;
+.flex-mixin{
+	display:flex;
+	justify-content: center;
+}
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	
 }
-
+h1{
+	font-size: 30px;
+}
+h2{
+	font-size:25px;
+	padding-bottom:15px;
+	padding-top:20px;
+}
 html, body {
-    height: 100%;
+	height: 100%;
+	margin-left:40px;
+	margin-right:40px;
+	
 }
 
+p {
+	margin-bottom: 15px;
+	line-height: 2;
+	color:@red;
+}
+
+a{
+	text-decoration: none;
+	color: grey;   	
+	margin:10px;
+	
+}
+.navbar{	
+	display:flex;
+	justify-content: flex-end;
+	flex-wrap:wrap;
+	width:100%;
+	
+
+}
+.top-section{
+	background:lightgray;
+	.topsec{
+		
+		padding:15px;
+		margin-top:20px;
+		margin-bottom:20px;
+		.flex-mixin()
+	}
+	button{
+		margin-top:25px;
+	}
+	img{
+		height:auto;
+		width:20%;
+		margin-left:25px;
+		margin-right:25px;	
+	}
+	.toptext{
+		width:80%;
+		padding:10%;
+	}
+}
+
+.midsec{
+	
+	display:flex;
+	width:100%;
+
+	.middletext{
+		padding-left:50px;
+		padding-right:50px;
+		width:50%;
+		border-right:5px solid black;
+	}
+	
+	.skills{
+		padding: 15px;
+		padding-bottom: 40px;
+		width:50%;
+		text-align: center;
+	
+		ul {
+			width: 50%;
+			margin-left: 25%;
+			margin-right: 25%;
+		}
+	
+		ul li {
+			list-style: circle;
+			margin-bottom: 15px;
+			color:@red;
+		}
+	}
+}
+
+.table{
+	border-collapse:collapse;
+	font-size:25px;
+	margin-top:10px;
+	width:100%;
+	.flex-mixin();
+	
+	
+	table, th, td {
+		border: @border;
+	  }
+	  table{
+		  width:100%;
+	  }
+	  th, td{
+		padding:10px;
+	
+	  }
+	  th{
+		  font-weight: bold;
+	  }
+}
+.contact{
+	text-align:center;
+
+}
+
+
+.footer{
+	
+	margin-top:30px;
+	.flex-mixin();
+}
+
+@media screen and (max-width:500px){
+	.navbar{
+		.flex-mixin();
+	}
+	
+	.top-section{
+		background:none;
+		img{
+			display:none;
+		}
+	}
+	
+	
+	.midsec{
+		display:flex;
+		flex-wrap:wrap;
+		.middletext{
+			width:100%;
+			border:@border;
+			padding-bottom: 15px;
+		}
+		.skills{
+			width:100%;
+			border:@border;
+			border-top:none;
+		}
+	}
+}
